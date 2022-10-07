@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Top 10 best laptop for college work
-date: 2022-10-07T19:54:06.050Z
+date: 2022-10-06T19:54:06.050Z
 authors: ["Sage Kirk"]
 categories: [laptops]
 description: best laptop for college work
