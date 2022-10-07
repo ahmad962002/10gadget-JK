@@ -23,7 +23,7 @@ email: Administrasi.Net
 description: >-
   Just another jekyll page.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://administrasiblog.netlify.app/"
+url: "/"
 twitter_username: Administrasi.Net
 github_username:  Administrasi.Net
 timezone: Europe/Budapest
