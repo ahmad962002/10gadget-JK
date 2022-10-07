@@ -38,7 +38,7 @@ paginate_path: /page:num/
 collections:
   posts:
     output: true
-    permalink: /:path/
+    permalink: /:category/:title/
 
 defaults:
   - scope:
