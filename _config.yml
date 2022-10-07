@@ -1,6 +1,6 @@
 baseurl: "/"
 permalink: pretty
-title: "Jekyll Atlantic"
+title: "10GADGET"
 collections_dir: collections
 markdown: kramdown
 highlighter: rouge
@@ -23,9 +23,9 @@ logo:
   logo_mobile_width: "36px"
 
 seo:
-  meta_twitter_site: "@zerostaticio"
-  meta_twitter_creator: "@zerostaticio"
-  meta_og_image: "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
+  meta_twitter_site: ""
+  meta_twitter_creator: ""
+  meta_og_image: ""
 
 plugins:
   - jekyll-environment-variables
