@@ -2,33 +2,55 @@
 layout: default
 ---
 
-{% include base_path %}
+{% include heading.html heading=page.title description=page.description align="center" date=page.date %}
 
-{% include post-hero.html %}
+{% if page.authors %}
+  <div class="flex flex-col pb-3 md:hidden">
+    {% for author in page.authors %}
+      {% include author-large.html
+        author=author
+      %}
+    {% endfor %}
+  </div>
+{% endif %}
 
-<div class='o-wrapper'>
+<div class="flex flex-col md:flex-row py-6 md:py-12">
 
-  <div class='o-grid'>
-    <div class='o-grid__col o-grid__col--center o-grid__col--2-3-m'>
-      <article class='c-post'>
+  <div class="w-full md:w-3/12 pr-3">
+    {% if page.authors %}
+      <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
+        {% for author in page.authors %}
+          {% include author-large.html
+        author=author
+        %}
+        {% endfor %}
+      </div>
+    {% endif %}
 
-        <div class='c-content'>
-          {{ content }}
-        </div>
+    {% if page.categories %}
+      <div class="hidden md:block">
+        {% for category in page.categories %}
+          {% include category-badge.html %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 
-        <div class='o-grid'>
-          <div class='o-grid__col o-grid__col--4-4-s'>
-              {% include share.html %}
-          </div>
-        </div>
-
-        <hr>
-
-        {% include disqus.html %}
-
-      </article>
-
+  <div class="w-full md:w-9/12">
+    <div class="prose">
+      {{ content }}
     </div>
   </div>
 
 </div>
+
+{% if page.categories %}
+  <div class="py-6 mt-6 border-t-2 block md:hidden">
+    <h3 class="text-sm font-medium mb-1">Categories</h3>
+    <div>
+      {% for category in page.categories %}
+        {% include category-badge.html %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %} 

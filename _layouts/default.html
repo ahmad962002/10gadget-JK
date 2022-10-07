@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-{% include head.html %}
+    {% include meta.html %}
 
-<body class='{% if page.url == '/' %} is-home {% endif %}'>
-
-  {% include analytics.html %}
-
-  <div class='js-off-canvas-container c-off-canvas-container'>
-    {% include header.html %}
-
-    {{ content }}
-    
-    {% include footer.html %}
-  </div>
-
-  <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}">                 </script>
-  <script src="{{ '/js/jquery.viewportchecker.min.js' | prepend: site.baseurl }}"> </script>
-  <script src="{{ '/js/jquery.ghostHunter.min.js' | prepend: site.baseurl }}">     </script>
-  <script src="{{ '/js/masonry.pkgd.min.js' | prepend: site.baseurl }}">           </script>
-  <script src="{{ '/js/imagesloaded.pkgd.min.js' | prepend: site.baseurl }}">      </script>
-  <script src="{{ '/js/evil-icons.min.js' | prepend: site.baseurl }}">             </script>
-  <script src="{{ '/js/jquery.fitvids.js' | prepend: site.baseurl }}">             </script>
-  <script src="{{ '/js/instafeed.min.js' | prepend: site.baseurl }}">              </script>
-  <script src="{{ '/js/transition.js' | prepend: site.baseurl }}">                 </script>
-  <script src="{{ '/js/zoom.min.js' | prepend: site.baseurl }}">                   </script>
-  <script src="{{ '/js/app.js' | prepend: site.baseurl }}">                        </script>
-  
-</body>
-
+    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
+    <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
+  </head>
+  <body class="page {{page.bodyClass}}">
+    {% include mobile-menu.html %}
+    <div class="container mx-auto px-6 md:px-4">
+      {% include header.html %}
+      {{content}}
+      {% include footer.html %}
+    </div>
+    {% include google-analytics.html %}
+    <script type="text/javascript" src="{{ '/assets/js/hamburger.js' | relative_url }}"></script>
+  </body>
 </html>

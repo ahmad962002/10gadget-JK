@@ -1,89 +1,75 @@
-# Welcome to Epeolatory.in!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title:              Epeolatry.in | You're bound to find more.
-logo:               /images/pages/logo.png
-description:        Book Reviews, Poetries, Writer's Corner
-baseurl:            ''
-url:                '/'
-
-# Social Settings
-twitter:            
-facebook:           https://www.facebook.com/epeolatry.in
-instagram:          https://www.instagram.com/bookworm_falguni
-amazon:             https://www.amazon.in/gp/profile/amzn1.account.AGWBO4A7KCKFKSVTS2VODO64KUDQ?ie=UTF8&ref_=ya_mb_l_prf
-goodreads:          https://www.goodreads.com/user/show/58171261-falguni-jain
-linkedin:           https://www.linkedin.com/in/falguni-jain-40a4bb155/
-
-disqus_shortname:   epeolatory
-gtag: G-KLZYMBKREY
-
-markdown:  kramdown
+baseurl: "/"
 permalink: pretty
-paginate:  12
-sass:
-  style: compact
-  sass_dir: _sass
+title: "Jekyll Atlantic"
+collections_dir: collections
+markdown: kramdown
+highlighter: rouge
 
-gems:
-  - jekyll-paginate
-  - jekyll/tagging
-  - jekyll-minifier
-  - jekyll-feed
-  - jekyll-sitemap
+sass:
+  indentWidth: 4
+  style: compact
+  precision: 10
+
+google_analytics_id: false # replace with "UA-XXXX"
+
+logo:
+  logo_desktop_image: assets/images/logo/logo.svg
+  logo_desktop_text: "Jekyll <strong>Atlantic</strong>"
+  logo_mobile_image: assets/images/logo/logo-mobile.svg
+  logo_mobile_text: ""
+  logo_desktop_height: "36px"
+  logo_desktop_width: "36px"
+  logo_mobile_height: "36px"
+  logo_mobile_width: "36px"
+
+seo:
+  meta_twitter_site: "@zerostaticio"
+  meta_twitter_creator: "@zerostaticio"
+  meta_og_image: "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
 
 plugins:
+  - jekyll-environment-variables
+  - jekyll-postcss
   - jekyll-paginate
-  - jekyll/tagging
-  - jekyll-minifier
-  - jekyll-feed
-  - jekyll-sitemap
 
-include:
-  - _pages
-  - _sass/vendor/fa/webfonts
+paginate: 3
+paginate_path: /blog/page:num/
 
-exclude:
-  - vendor
-  - Gemfile
-  - Gemfile.lock
+collections:
+  posts:
+    output: true
+    permalink: /blog/:path/
 
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
-
-# Tags
-tag_page_dir:         tag
-tag_page_layout:      tag_page
-tag_permalink_style:  pretty
-
-# Pages path
 defaults:
   - scope:
-      path: '_pages'
-    values:
-      permalink: /:basename:output_ext
-      sitemap:
-        tags:
-          changefreq: weekly
-          priority: 0.7
-  - scope:
-      path: 'tag'
-    values:
-      sitemap:
-        tags:
-          changefreq: daily
-          priority: 0.5
-  - scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      sitemap:
-        tags:
-          changefreq: weekly
-          priority: 0.9
+      layout: post
+  - scope:
+      path: "images"
+    values:
+      image: true
+  - scope:
+      path: "categories"
+    values:
+      layout: category
+      permalink: /category/:basename/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - yarn.lock
+  - package.json
+  - package-lock.json
+  - vendor
+  - LICENSE.md
+  - LICENSE
+  - README.md
+  - .vscode
+  - .gitignore
+  - .liquidrc
+  - postcss.config.js
+  - tailwind.config.js
+  - netlify.toml

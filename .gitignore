@@ -1,10 +1,22 @@
-# build
+# NPM
+node_modules
+npm-debug.log
+
+# Jekyll
 _site
-
-# cache
-.sass-cache
+_site/
+.sass-cache/
 .jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+**/Gemfile.lock
 
-# OSX
+# Temporary files
+tmp
 .DS_Store
-**/.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+.Spotlight-V100
+.Trashes
+.idea
