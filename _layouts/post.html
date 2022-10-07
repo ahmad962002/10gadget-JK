@@ -2,14 +2,33 @@
 layout: default
 ---
 
-<section class="blog-area">
-    <div class="container">
+{% include base_path %}
 
-        {% include post-header.html  %}
+{% include post-hero.html %}
 
-        {% include post-body.html  %}
+<div class='o-wrapper'>
 
-        {% include post-footer.html  %}
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--center o-grid__col--2-3-m'>
+      <article class='c-post'>
+
+        <div class='c-content'>
+          {{ content }}
+        </div>
+
+        <div class='o-grid'>
+          <div class='o-grid__col o-grid__col--4-4-s'>
+              {% include share.html %}
+          </div>
+        </div>
+
+        <hr>
+
+        {% include disqus.html %}
+
+      </article>
 
     </div>
-</section>
+  </div>
+
+</div>

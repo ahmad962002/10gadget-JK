@@ -1,0 +1,41 @@
+<div class='c-post-hero'>
+  <div class='o-grid'>
+    <div
+      class='o-grid__col o-grid__col--4-4-s {% if page.image %} o-grid__col--2-4-l {% endif %} {% unless page.image %} o-grid__col--2-3-m o-grid__col--center {% endunless %}'>
+      <div class='c-post-hero__content {% unless page.image %} c-post-hero__content--no-image {% endunless %}'>
+        <div class='c-post-hero__tags'>
+          {% for tag in page.tags limit:1 %}
+          <a href='{{ site.baseurl }}/tag/{{ tag }}'>{{ tag }}</a>
+          {% endfor %}
+        </div>
+        <h1 class='c-post-hero__title'>{{ page.title }}</h1>
+        <div class='c-post-hero__meta'>
+          <time datetime="{{ page.date | date: '%d %b %Y' }}">{{ page.date | date: '%d %b %Y' }}</time>
+        </div>
+      </div>
+    </div>
+
+    {% if page.image %}
+    <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-l'>
+      <div class='c-post-hero__media'>
+        <!-- <img loading="lazy" class='c-post-hero__image js-fadein' src="{{ page.image | prepend: site.baseurl }}" alt="{{ page.title }}"> -->
+        <div class="book">
+          <div class="inner-book">
+            <div class="img" style="padding-top: calc(1.07 * 100%)">
+              <img src="{{page.image}}" alt="{{ page.title }}" />
+            </div>
+            <div class="page"></div>
+            <div class="page page-2"></div>
+            <div class="page page-3"></div>
+            <div class="page page-4"></div>
+            <div class="page page-5"></div>
+            <div class="img final-page" style="padding-top: calc(1.07 * 100%)">
+              <img src="{{page.image}}" alt="{{ page.title }}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

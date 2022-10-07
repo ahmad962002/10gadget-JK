@@ -1,21 +1,26 @@
-language: node_js
-
-node_js:
-    - 12.16.2
-
-cache:
-    bundler: true
-    directories:
-        - bower_components
-        - /home/travis/.rvm/
+language: ruby
+rvm:
+  - 2.7
 
 before_install:
-    - rvm install 2.6.3
-    - bundle install
+  - gem install bundler
+
+install:
+  - bundle install
+
+before_script:
+ - chmod +x ./script/cibuild
+ - chmod +x ./script/push.sh
 
 script:
-    - make
-    - find ./_site
+ - ./script/cibuild
+ - ./script/push.sh
 
-after_script:
-    - bundle exec htmlproofer --allow_hash_href ./_site
+sudo: false # route your build to the container-based infrastructure for a faster build
+
+cache:
+  bundler: true # caching bundler gem packages will speed up build
+
+# Optional: disable email notifications about the outcome of your builds
+notifications:
+  email: false

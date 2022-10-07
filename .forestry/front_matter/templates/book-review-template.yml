@@ -1,0 +1,25 @@
+---
+label: book-review-template
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: author
+  label: author
+- type: list
+  name: tags
+  label: tags
+- type: file
+  name: image
+  label: image
+- name: cta
+  type: text
+  config:
+    required: false
+  label: cta
+  description: Purchase/Read Link

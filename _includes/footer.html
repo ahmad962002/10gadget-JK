@@ -1,52 +1,47 @@
-<footer class="footer-area footer-image">
-    <div class="container m-b-60">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="/" class="footer-logo" data-aos="fade-up" data-aos-duration="500">
-                    <img src="/site-assets/images/footer-logo.svg"  alt="Site logo (Lencse)">
-                </a>
-                <p>{{ site.description | escape }}</p>
-            </div>
-            <div class="col-md-4">
-                <ul>
-                    <li>
-                        <a href="/feed.xml" title="RSS Feed">
-                            <i class="fas fa-rss"></i>&nbsp;RSS
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="footer-social list-inline"
-                    data-aos="fade-up"
-                    data-aos-duration="1500"
-                >
-                    <li class="list-inline-item">
-                        <a
-                            title="Lencse Twitter"
-                            class="twitter"
-                            href="https://twitter.com/{{ site.twitter_username }}"
-                        >
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a
-                            title="Lencse GitHub"
-                            class="github"
-                            href="https://github.com/{{ site.github_username }}/"
-                        >
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<footer class='c-footer'>
+  <div class='o-grid'>
+
+    <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--1-3-l'>
+      <p class='c-footer__headline'>Tags</p>
+
+      <ul class='c-footer-list o-plain-list'>
+        {% for tag in site.tags %}
+          <li class="left"><a href='{{ site.baseurl }}/tag/{{ tag[0] }}'>{{ tag[0] }}</a><li>
+        {% endfor %}
+      </ul>
     </div>
-    <div class="container">
-        <div class="footer-copyright text-center">
-            <p>© 2019 Churel Theme | Developed by <a href="https://themeix.com">Themeix</a></p>
-        </div>
-        <a href="#" id="return-top" title="Return to top"><i class="fas fa-angle-up"></i></a>
+
+    <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--1-3-l' style="display: inline-block;">
+      <p class='c-footer__headline'>Navigation</p>
+
+      <ul class='c-footer-list o-plain-list'>
+        {% include navigation.html %}
+      </ul>
     </div>
+
+    <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--1-3-l'>
+      <p class='c-footer__headline'>Newsletter</p>
+
+      {% include subscribe-form.html %}
+    </div>
+
+    <div class='o-grid__col o-grid__col--full'>
+      <div class='c-footer__bottom'>
+        <div class='o-grid'>
+
+          <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m'>
+            <div class='u-font-size-tiny c-footer__copyright'>
+              {{ site.time | date: '%Y' }} {{ site.title }}
+            </div>
+          </div>
+
+          <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m'>
+            {% include social-icons.html %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 </footer>
