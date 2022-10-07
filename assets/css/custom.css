@@ -1,12 +1,83 @@
 body {}
 .button {
     font: bold 22px Arial;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 4px 12px 4px 12px;
-    border-top: 2px solid #CCCCCC;
-    border-right: 2px solid #333333;
-    border-bottom: 2px solid #333333;
-    border-left: 2px solid #CCCCCC;
+    padding: 4px 12px 4px 12px
   }
+  .row {
+	display: flex;
+}
+.row td, th {
+	width: 25%;
+}
+.row th {
+	text-align: center;
+	color: white;
+	background-color: black;
+	font-weight: bold;
+}
+#td1 {
+	padding: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}/*makes the image smaller*/
+#td2 {
+	text-align: left;
+	font-weight: 900;
+	font-size: 17px;
+	text-decoration: underline;
+	color: black;
+}
+#td2 p{
+	margin-bottom: 0;
+}/*styles up the product name and removes margin between it and the star review*/
+#td3 {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}/*reduces font size and adds a check, you need to upload this icon to your wordpress site to make it work*/
+.link {
+	background-color: #b01a1f;
+	border: 2px solid transparent;
+	padding: 10px 15px;
+	display: inline-block!important;
+	color: white;
+}
+.link:hover {
+	border: 2px solid #b01a1f;
+	color: #b01a1f;
+	background-color: white;
+}
+button {
+	padding: 0;
+	border: none;
+}
+#td4 {
+	display: flex;
+	align-items: center;
+}/*sets style to the button, link and sets it in the middle instead of top side*/
+@media only screen and (max-width: 1015px) {
+	.row {
+		flex-direction: column;
+	}
+	td, th{
+		width: 100%!important;
+}
+	#th1, #th3, #th4 {
+		display: none;
+	}
+		#td1 {
+		display: flex;
+		justify-content: center;
+	}/*aligns the image to center*/
+  #td3, #td4 {
+	justify-content: center;	
+	}/*just center alignment*/
+	#td2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		order: -1;
+	}/*aligns to the center and sets the order -1 which puts the name before image, since by default the order is 0*/
+}
