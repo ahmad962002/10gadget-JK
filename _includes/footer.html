@@ -1,12 +1,52 @@
-<footer class="py-6 border-t-2">
-  <div class="container mx-auto">
-    <div class="flex mb-2">
-      {% for item in site.data.social %}
-      <a class="py-2 mr-2" href="{{ item.link }}"><img width="24" height="24" src="{{ item.image }}" alt="{{ item.name }}" /></a>
-      {% endfor %}
+<footer class="footer-area footer-image">
+    <div class="container m-b-60">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/" class="footer-logo" data-aos="fade-up" data-aos-duration="500">
+                    <img src="/site-assets/images/footer-logo.svg"  alt="Site logo (Lencse)">
+                </a>
+                <p>{{ site.description | escape }}</p>
+            </div>
+            <div class="col-md-4">
+                <ul>
+                    <li>
+                        <a href="/feed.xml" title="RSS Feed">
+                            <i class="fas fa-rss"></i>&nbsp;RSS
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="footer-social list-inline"
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
+                >
+                    <li class="list-inline-item">
+                        <a
+                            title="Lencse Twitter"
+                            class="twitter"
+                            href="https://twitter.com/{{ site.twitter_username }}"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a
+                            title="Lencse GitHub"
+                            class="github"
+                            href="https://github.com/{{ site.github_username }}/"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="text-sm text-gray-600">
-      © <a class="text-green-500" href="/">10Gadget</a>
-      <span> - 2022 All Right Reserved.</span>
+    <div class="container">
+        <div class="footer-copyright text-center">
+            <p>© 2019 Churel Theme | Developed by <a href="https://themeix.com">Themeix</a></p>
+        </div>
+        <a href="#" id="return-top" title="Return to top"><i class="fas fa-angle-up"></i></a>
     </div>
 </footer>
