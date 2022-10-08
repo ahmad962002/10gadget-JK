@@ -3,6 +3,9 @@ body {}
     font: bold 22px Arial;
     padding: 4px 12px 4px 12px
   }
+.prose {
+	word-wrap: break-word;
+}
 .row {
 	display: flex;
 }
