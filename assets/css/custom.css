@@ -36,11 +36,11 @@ body {}
 	font-size: 15px;
 }/*reduces font size and adds a check, you need to upload this icon to your wordpress site to make it work*/
 .link {
-	background-color: #b01a1f;
+	background-color: #ffffff;
 	border: 2px solid transparent;
 	padding: 10px 15px;
 	display: inline-block!important;
-	color: rgb(5, 5, 5);
+	color: #b01a1f;
 }
 .link:hover {
 	border: 2px solid #b01a1f;
