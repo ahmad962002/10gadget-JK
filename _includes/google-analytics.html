@@ -2,7 +2,7 @@
     {% assign gid = site.env.NETLIFY_GOOGLE_ANALYTICS_ID %}
     {% if gid %}
     <script defer src="https://www.googletagmanager.com/gtag/js?id={{ gid }}"></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
@@ -13,7 +13,7 @@
     </script>
     {% elsif site.google_analytics_id %}
     <script defer src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
