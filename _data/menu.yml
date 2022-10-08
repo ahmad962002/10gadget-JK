@@ -4,16 +4,16 @@ main:
     weight: 1
   - name: "Affiliate Disclosure"
     url: "/affiliate-disclosure/"
-    weight: 2
+    weight: 3
   - name: "Terms of Service"
     url: "/terms-of-service/"
-    weight: 3
+    weight: 4
   - name: "Privacy Policy"
     url: "/privacy-policy/"
-    weight: 4
+    weight: 5
   - name: "Contact us"
     url: "/contact-us/"
-    weight: 5
+    weight: 6
   - name: "About"
     url: "/about/"
-    weight: 6
+    weight: 7

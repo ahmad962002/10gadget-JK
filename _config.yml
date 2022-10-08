@@ -31,6 +31,7 @@ plugins:
   - jekyll-environment-variables
   - jekyll-postcss
   - jekyll-paginate
+  - jekyll-sitemap
 
 paginate: 10
 paginate_path: /page:num/
@@ -50,6 +51,7 @@ defaults:
       path: "images"
     values:
       image: true
+      sitemap: false
   - scope:
       path: "categories"
     values:
