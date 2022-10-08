@@ -3,7 +3,7 @@ body {}
     font: bold 22px Arial;
     padding: 4px 12px 4px 12px
   }
-  .row {
+.row {
 	display: flex;
 }
 .row td, th {
@@ -24,14 +24,12 @@ body {}
 }/*makes the image smaller*/
 #td2 {
 	text-align: left;
-	font-weight: 900;
-	font-size: 17px;
+	font-weight: 600;
+	font-size: 14px;
 	text-decoration: underline;
 	color: black;
 }
-#td2 p{
-	margin-bottom: 0;
-}/*styles up the product name and removes margin between it and the star review*/
+/*styles up the product name and removes margin between it and the star review*/
 #td3 {
 	display: flex;
 	align-items: center;
