@@ -2,6 +2,9 @@ main:
   - name: "Home"
     url: "/"
     weight: 1
+  - name: "Categories"
+    url: "/categories/"
+    weight: 2
   - name: "Affiliate Disclosure"
     url: "/affiliate-disclosure/"
     weight: 3
