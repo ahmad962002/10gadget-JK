@@ -1,4 +1,4 @@
-baseurl: "https://10gadget.com/"
+baseurl: "/"
 permalink: pretty
 title: "10 GADGET"
 collections_dir: collections
