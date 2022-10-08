@@ -2,9 +2,19 @@ main:
   - name: "Home"
     url: "/"
     weight: 1
-  - name: "Blog"
-    url: "/blog/"
+secondary:
+  - name: "Affiliate Disclosure"
+    url: "/affiliate-disclosure/"
+    weight: 1
+  - name: "Terms of Service"
+    url: "/terms-of-service/"
     weight: 2
+  - name: "Privacy Policy"
+    url: "/privacy-policy/"
+    weight: 3
+  - name: "Contact us"
+    url: "/contact-us/"
+    weight: 4
   - name: "About"
     url: "/about/"
-    weight: 3
+    weight: 5

@@ -1,5 +1,8 @@
-sage_kirk:
-  name: 'Sage Kirk'
-  image: 'assets/images/author/sage-kirk.jpg'
+ahmad_raza:
+  name: 'Ahmad Raza'
+  image: 'assets/images/author/Ahmad.webp'
   instagram: 'mr_raza96'
-
+ivan:
+  name: 'Ivan'
+  image: 'assets/images/author/ivan.webp'
+  instagram: 'ivan_tech09'
