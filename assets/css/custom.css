@@ -40,7 +40,7 @@ body {}
 	border: 2px solid transparent;
 	padding: 10px 15px;
 	display: inline-block!important;
-	color: white;
+	color: rgb(5, 5, 5);
 }
 .link:hover {
 	border: 2px solid #b01a1f;
