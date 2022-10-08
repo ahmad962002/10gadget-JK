@@ -23,9 +23,7 @@ logo:
   logo_mobile_width: "36px"
 
 seo:
-  meta_twitter_site: "@zerostaticio"
-  meta_twitter_creator: "@zerostaticio"
-  meta_og_image: "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
+
 
 plugins:
   - jekyll-environment-variables
