@@ -11,7 +11,7 @@ sass:
   style: compact
   precision: 10
 
-google_analytics_id: "G-NMF7849C4G" # replace with "UA-XXXX"
+google_analytics_id: false # replace with "UA-XXXX"
 
 logo:
   logo_desktop_image: assets/images/logo/logo.svg
