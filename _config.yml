@@ -54,7 +54,7 @@ defaults:
       path: "categories"
     values:
       layout: category
-      permalink: /category/:basename/
+      permalink: /:basename/
 
 exclude:
   - Gemfile
