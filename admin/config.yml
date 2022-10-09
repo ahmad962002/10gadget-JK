@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
+site_url: https://10gadget.com
+logo_url: https://10gadget.com/assets/images/logo/logo.svg
 collections:
   - name: 'blog'
     label: 'Blog'
