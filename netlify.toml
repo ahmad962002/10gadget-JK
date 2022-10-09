@@ -9,10 +9,6 @@
   NODE_ENV = "production"
 
 [[redirects]]
-  from = "https://10gadget-jk.netlify.app/*"
-  to = "https://10gadget.com/:splat"
-  force = true
-[[redirects]]
   from = "https://10gadget.com/*/index.html"
   to = "https://10gadget.com/:splat"
   force = true
