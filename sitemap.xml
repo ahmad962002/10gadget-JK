@@ -1,16 +1,21 @@
 ---
-layout: null
+layout: nil
+title : "Sitemap"
+sitemap_exclude: y
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign posts = site.posts}{% for post in posts %}  <url>
-    <loc>https://10gadget.com/{{ post.url }}</loc>
-    <lastmod>{{ page.date }}</lastmod>
-  </url>
-{% endfor %}
-{% assign pages = site.pages}{% for page in pages %}  <url>
-    <loc>https://10gadget.com/{{ page.url }}</loc>
-    <lastmod>{{ post.date }}</lastmod>
-  </url>
-{% endfor %}
+    {% for post in site.posts %}
+    <url>
+        <loc>{{site.production_url}}{{ post.url | remove: 'index.html' }}</loc>
+    </url>
+    {% endfor %}
+
+    {% for page in site.pages %}
+    {% if page.sitemap_exclude != 'y' %}
+    <url>
+        <loc>{{site.production_url}}{{ page.url | remove: 'index.html' }}</loc>
+    </url>
+    {% endif %}
+    {% endfor %}
 </urlset>
