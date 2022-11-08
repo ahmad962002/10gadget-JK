@@ -9,7 +9,7 @@ layout: null
   </url>
 {% assign pages = site.pages}{% for page in pages %}  <url>
     <loc>https://10gadget.com/{{ page.url }}</loc>
-    <lastmod>{{ page.date }}</lastmod>
+    <lastmod>{{ post.date }}</lastmod>
   </url>
 {% endfor %}
 </urlset>
