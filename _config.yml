@@ -5,7 +5,6 @@ title: "10 GADGET"
 collections_dir: collections
 markdown: kramdown
 highlighter: rouge
-watch: true
 
 sass:
   indentWidth: 4
@@ -33,8 +32,6 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   
-gems:
-  - jekyll-tagging-related_posts
 
 paginate: 12
 paginate_path: /blog/page:num/
