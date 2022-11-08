@@ -6,7 +6,6 @@ collections_dir: collections
 markdown: kramdown
 highlighter: rouge
 watch: true
-lsi: true
 
 sass:
   indentWidth: 4
