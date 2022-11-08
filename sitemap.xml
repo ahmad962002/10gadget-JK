@@ -3,7 +3,11 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign pages = site.pages | where:"sitemap","true" %}{% for page in pages %}  <url>
+{% assign posts = site.posts}{% for post in posts %}  <url>
+    <loc>https://10gadget.com/{{ post.url }}</loc>
+    <lastmod>{{ page.date }}</lastmod>
+  </url>
+{% assign pages = site.pages}{% for page in pages %}  <url>
     <loc>https://10gadget.com/{{ page.url }}</loc>
     <lastmod>{{ page.date }}</lastmod>
   </url>
