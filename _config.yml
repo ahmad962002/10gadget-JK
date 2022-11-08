@@ -31,6 +31,9 @@ plugins:
   - jekyll-postcss
   - jekyll-paginate
   - jekyll-sitemap
+  
+gems:
+  - jekyll-tagging-related_posts
 
 paginate: 10
 paginate_path: /page:num/
