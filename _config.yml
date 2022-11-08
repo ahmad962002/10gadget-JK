@@ -37,8 +37,8 @@ plugins:
 gems:
   - jekyll-tagging-related_posts
 
-paginate: 10
-paginate_path: /page:num/
+paginate: 12
+paginate_path: /blog/page:num/
 
 collections:
   posts:
