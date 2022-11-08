@@ -17,7 +17,7 @@ logo:
   logo_desktop_image: assets/images/logo/logo.svg
   logo_desktop_text: "<strong>10 GADGET</strong>"
   logo_mobile_image: assets/images/logo/logo.svg
-  logo_mobile_text: ""
+  logo_mobile_text: "<strong>10 GADGET</strong>"
   logo_desktop_height: "36px"
   logo_desktop_width: "36px"
   logo_mobile_height: "36px"
@@ -30,7 +30,7 @@ plugins:
   - jekyll-environment-variables
   - jekyll-postcss
   - jekyll-paginate
-  - jekyll-sitemap
+
   
 
 paginate: 12
