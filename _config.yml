@@ -6,6 +6,7 @@ collections_dir: collections
 markdown: kramdown
 highlighter: rouge
 production_url: "https://10gadget.com"
+watch: true
 
 sass:
   indentWidth: 4
@@ -35,7 +36,7 @@ plugins:
 
   
 
-paginate: 12
+paginate: 10
 paginate_path: /blog/page:num/
 
 collections:
