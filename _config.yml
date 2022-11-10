@@ -6,7 +6,6 @@ collections_dir: collections
 markdown: kramdown
 highlighter: rouge
 production_url: "https://10gadget.com"
-watch: true
 
 sass:
   indentWidth: 4
