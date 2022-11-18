@@ -1,0 +1,1 @@
+Sitemap: https://10gadget.com/jekyll-atlantic-theme/sitemap.xml
