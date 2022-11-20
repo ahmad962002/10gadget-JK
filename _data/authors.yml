@@ -1,8 +1,6 @@
-ahmad_raza:
-  name: 'Ahmad Raza'
-  image: 'assets/images/author/Ahmad.webp'
-  instagram: 'mr_raza96'
-ivan:
-  name: 'Ivan'
-  image: 'assets/images/author/ivan.webp'
-  instagram: 'ivan_tech09'
+courtney_heitman:
+  title: "Courtney Heitman"
+  name: "Courtney Heitman"
+  job: "Accessibility Program Manager"
+  image: "assets/images/team/sage-kirk.jpg"
+  bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in."

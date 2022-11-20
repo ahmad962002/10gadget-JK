@@ -1,20 +1,6 @@
 [build]
-  command = "bundle exec jekyll build"
+  command = "jekyll build"
   publish = "_site"
 
 [build.environment]
-  NODE_VERSION = "14"
-  NPM_VERSION = "7"
   JEKYLL_ENV = "production"
-  NODE_ENV = "production"
-
-[[redirects]]
-  from = "https://10gadget.com/*/index.html"
-  to = "https://10gadget.com/:splat"
-  force = true
-
-[[redirects]]
-  from = "https://10gadget-jk.netlify.app/*"
-  to = "https://10gadget.com/:splat"
-  force = true
-

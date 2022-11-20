@@ -1,22 +1,10 @@
 main:
-  - name: "Home"
-    url: "/"
+  - name: Home
+    url: /
     weight: 1
-  - name: "Categories"
-    url: "/categories/"
+  - name: Blog
+    url: /blog/
     weight: 2
-  - name: "Affiliate Disclosure"
-    url: "/affiliate-disclosure/"
-    weight: 3
-  - name: "Terms of Service"
-    url: "/terms-of-service/"
-    weight: 4
-  - name: "Privacy Policy"
-    url: "/privacy-policy/"
-    weight: 5
-  - name: "Contact us"
-    url: "/contact-us/"
-    weight: 6
-  - name: "About"
-    url: "/about/"
-    weight: 7
+  - name: About
+    url: /about/
+bottom:

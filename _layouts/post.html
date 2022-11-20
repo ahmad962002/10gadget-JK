@@ -1,57 +1,77 @@
 ---
 layout: default
+body_classes: page-post page-post-1
 ---
 
-{% include heading.html heading=page.title description=page.description align="center" date=page.date %}
+<div class="section">
+  <div class="container post-header">
 
-{% if page.authors %}
-  <div class="flex flex-col pb-3 md:hidden">
-    {% for author in page.authors %}
-      {% include author-large.html
-        author=author
-      %}
-    {% endfor %}
-  </div>
-{% endif %}
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+          {% if page.date %}
+            <div class="post-date">{{ page.date | date_to_long_string }}</div>
+          {% endif %}
+          {% if page.categories %}
+          <div class="post-categories">
+          {% include framework/blocks/components/categories-badges.html 
+              categories=page.categories
+          %}
+          {% endif %}
+          </div>
+          <div class="post-title">
+            <h1>{{ page.title }}</h1>
+          </div>
+          {% if page.description %}
+            <div class="post-description">
+              <p>{{ page.description }}</p>
+            </div>
+          {% endif %}
 
-<div class="flex flex-col md:flex-row py-6 md:py-12">
+          {% if page.authors %}
+            <div class="post-authors">
+              {% for author in page.authors %}
+              {% assign author_id = author | replace: " ", "_" | downcase %}
+              {% assign author_object = site.data.authors[author_id] %}
+              {% include framework/blocks/components/author.html 
+                name=author_object.name
+                job=author_object.job
+                image=author_object.image
+              %}
+              {% endfor %}
+            </div>
+          {% endif %}
 
-  <div class="w-full md:w-3/12 pr-3">
-    {% if page.authors %}
-      <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
-        {% for author in page.authors %}
-          {% include author-large.html
-        author=author
-        %}
-        {% endfor %}
       </div>
-    {% endif %}
-
-    {% if page.categories %}
-      <div class="hidden md:block">
-        {% for category in page.categories %}
-          {% include category-badge.html %}
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="w-full md:w-9/12">
-    <div class="prose">
-      {{ content }}
     </div>
-  </div>
+          
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        {% if page.image %}
+          <div class="post-image">
+            <img src="{{ page.image }}" alt="{{ page.title }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
 
+  </div>
 </div>
 
-{% if page.categories %}
-  <div class="py-6 mt-6 border-t-2 block md:hidden">
-    <h3 class="text-sm font-medium mb-1">Categories</h3>
-    <div>
-      {% for category in page.categories %}
-        {% include category-badge.html %}
-      {% endfor %}
+<div class="section pt-0">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="col-12 col-lg-8">
+        <div class="content">{{ content }}</div>
+        {% if site.disqus.shortname %}
+        {% if page.comments != false %}
+          <div class="comments mt-3">
+            {% include framework/global/integrations/disqus.html %}
+          </div>
+        {% endif %}
+        {% endif %}
+      </div>
+
     </div>
   </div>
-{% endif %} 
-
+</div>

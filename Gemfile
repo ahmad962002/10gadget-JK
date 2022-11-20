@@ -1,9 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.1"
-gem "jekyll-environment-variables"
-gem "jekyll-postcss"
-gem "jekyll-paginate"
-gem 'jekyll-sitemap'
-
-
+gem 'jekyll-environment-variables'
+gem 'jekyll-paginate'
+gem "webrick", "~> 1.7"
+#gem "jekyll", "~> 4.2"
+gem "github-pages", "~> 227", group: :jekyll_plugins
