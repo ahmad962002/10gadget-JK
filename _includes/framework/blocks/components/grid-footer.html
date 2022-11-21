@@ -5,7 +5,7 @@
 <div class="col-12">
     {% if view_more_button_link and view_more_button_link != '' %}
     <div class="grid-footer grid-footer-align-{{ view_more_button_align }}">
-        <a href="{{view_more_button_link | relative_url }}" class="grid-view-more-button">
+        <a href="{{ site.url }}{{ view_more_button_link }}" class="grid-view-more-button">
             {{ view_more_button_text }} <i class="fa-solid fa-arrow-right"></i>
         </a>
     </div>

@@ -3,16 +3,13 @@
     {% for item in site.data.menu.main %}
       {% if item.child %}
         <li class="menu-item-dropdown menu-item-{{ item.name }}{% if item.url == page.url %} active {% endif %}">
-          <a href="{{ item.url | relative_url }}">{{ item.name }} <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="{{ site.url }}{{ item.url }}">{{ item.name }} <i class="fa-solid fa-chevron-down"></i></a>
           
           <div class="dropdown-menu">
             {% for childitem in item.child  %}
-              <a href="{{ childitem.url | relative_url }}" class="dropdown-item {% if childitem.url == page.url %} active {% endif %}">
+              <a href="{{ site.url }}{{ childitem.url }}" class="dropdown-item {% if childitem.url == page.url %} active {% endif %}">
                 {% if childitem.icon %}
-                  <div class="dropdown-item-icon"><img src="{{ childitem.icon | relative_url }}" /></div>
-                {% endif %}
-                {% if childitem.icon_darkmode %}
-                  <div class="dropdown-item-icon icon-invert"><img src="{{ childitem.icon_darkmode  | relative_url }}" /></div>
+                  <div class="dropdown-item-icon"><img src="{{ site.url }}{{ childitem.url }}" /></div>
                 {% endif %}
 
                 <div class="dropdown-item-content">
@@ -33,7 +30,7 @@
           {% assign active = nil %}
         {% endif %}
         <li class="{% if item.url == page.url %}active{% endif %}">
-          <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
+          <a href="{{ site.url }}{{ item.url }}">{{ item.name }}</a>
         </li>
       {% endif %}
     {% endfor %}

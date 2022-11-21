@@ -1,8 +1,8 @@
 # -------------------
 # Jekyll Config
 # --------------------
-baseurl: ""
-url: ""
+baseurl: "/"
+url: "https://10gadget.com"
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -12,46 +12,42 @@ plugins:
   - jekyll-environment-variables
   - jekyll-paginate
 
-paginate: 6
-paginate_path: "/blog/page/:num"
+permalink: /:categories/:title/
+paginate: 9
+paginate_path: "/blog/page:num"
+future: false
 
-pagination:
-  enabled: true
-  debug: false
-  collection: "posts"
-  per_page: 6
-  permalink: "/page/:num/"
-  title: ":title - page :num"
-  sort_field: "date"
-  sort_reverse: true
-  trail:
-    before: 2
-    after: 2
-  indexpage: "index"
-
-# Collections
-collections_dir: collections
-collections:
-  posts:
-    output: true
-    permalink: /:categories/:title/
-
-# Pages
 defaults:
-  - scope:
+  -
+    scope:
       path: ""
-      type: posts
     values:
-      layout: post
-      weight: 999
-  - scope:
-      path: "images"
+      layout: null 
+      sitemap: false
+      comments: false
+      sharing: false
+      image: null  
+      image_alt: null  
+  -
+    scope:
+      path: "page"
+      type: "pages"
     values:
-      image: true
-  - scope:
-      path: "pages"
+      layout: page 
+      sitemap: true      
+  -
+    scope:
+      path: ""
+      type: "posts"
     values:
-      permalink: /:basename/
+      layout: "post"
+      sitemap: true
+      comments: true
+      sharing: true
+      image: "cover.png"
+      image_alt: "cover.jpg"
+      excerpt_separator: "<!--more-->"
+      youtube: null
 
 # SCSS
 sass:
@@ -77,26 +73,20 @@ analytics:
   google_analytics_id: ""
 
 disqus:
-  shortname: # Your disqus shortcode. leave this blank to disable comments globally
+  shortname: "calvinallen" # Your disqus shortcode. leave this blank to disable comments globally
 
 mailchimp:
-  form_action_url:
+  form_action_url: 
 
 contact_form: 
   use_netlify_form: true
   use_formspree_form: false
   formspree_endpoint: 
 
-darkmode:
-  enable_dark_mode: false
-  show_dark_mode_toggle_in_header: true 
-  show_dark_mode_toggle_in_bottom: false # displays the dark mode toggle switch in the footer and allows the user to manually change the mode
-  show_dark_mode_toggle_in_mobile_menu: true # displays the dark mode toggle switch in the footer and allows the user to manually change the mode
-
 colors:
   #light-mode colors
-  primary: "#B351A9"
-  primary_2: "#E0BDDE"
+  primary: "#3391CB"
+  primary_2: "#3391CB"
   primary_text: "#f9fafb"
   background: "#ffffff"
   background_2: "#f6f6f6"
@@ -104,17 +94,6 @@ colors:
   text: "#191a1a"
   text_2: "#555555"
   logo_text: "#191a1a"
-
-  # dark-mode colors
-  primary_dark: "#EC255A"
-  primary_2_dark: "#eed2d9"
-  primary_text_dark: "#f9fafb"
-  background_dark: "#121418"
-  background_2_dark: "#1d2026"
-  background_3_dark: "#24272d"
-  text_dark: "#F4F4F5"
-  text_2_dark: "#D1D5DB"
-  logo_text_dark: "#F4F4F5"
 
 fonts:
   google_fonts: "https://fonts.googleapis.com/css2?family=Fira+Mono&family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
@@ -127,19 +106,19 @@ logo:
   logo_text: "10 GADGET"
   logo_image: assets/images/logo/logo.svg
   logo_image_mobile: assets/images/logo/logo.svg
-  logo_image_invert: assets/images/logo/logo.svg
+  logo_image_invert: aassets/images/logo/logo.svg
   logo_image_invert_mobile: assets/images/logo/logo.svg
-  logo_image_desktop_height: "50px"
-  logo_image_desktop_width: "250px"
-  logo_image_mobile_height: "50px"
-  logo_image_mobile_width: "250px"
-  show_logo_image_on_mobile: true
-  show_logo_image_on_desktop: true
+  logo_image_desktop_height: "60px"
+  logo_image_desktop_width: "115px"
+  logo_image_mobile_height: "27px"
+  logo_image_mobile_width: "20px"
+  show_logo_image_on_mobile: false
+  show_logo_image_on_desktop: false
   show_logo_text_on_mobile: false
   show_logo_text_on_desktop: false
 
 menu: 
-  show_dropdown_items_in_mobile_menu: true
+  show_dropdown_items_in_mobile_menu: false
   show_social_media_in_mobile_menu: true
 
 header: 
@@ -148,10 +127,10 @@ header:
 footer:
   enable_footer: true # show/hide the entire footer
   footer_title: "10 GADGET"
-  footer_description: "At 10 GADGET, we review the latest and greatest in tech products so you don’t have to. From the newest smartphones to innovative home gadgets, we’ve got you covered. Our mission is to provide honest and unbiased product reviews, as well as helpful tips and tricks for getting the most out of your tech. We’re here to help you make the best decisions about what to buy and how to use it."
-  enable_social_media_icons: true
-  enable_menu_footer_primary: true
-  enable_menu_footer_secondary: true
+  footer_description: "At 10 GADGET, we review the latest and greatest in tech products so you don’t have to."
+  enable_social_media_icons: false
+  enable_menu_footer_primary: false
+  enable_menu_footer_secondary: false
   enable_menu_footer_tertiary: false
   footer_primary_menu_title: "Sections"
   footer_secondary_menu_title: "Pages"
@@ -159,7 +138,7 @@ footer:
 
 bottom:
   enable_bottom: false # show/hide the entire bottom (below the footer)
-  enable_bottom_menu: true # if enabled, the bottom menu can be edited in `_data/menu.yml`
+  enable_bottom_menu: false # if enabled, the bottom menu can be edited in `_data/menu.yml`
   copyright_text: "© 2022 10GADGET"
 
 

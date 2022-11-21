@@ -1,22 +1,26 @@
-# NPM
+# Test files
 node_modules
 npm-debug.log
 
+# Ruby 
+
 # Jekyll
 _site
-_site/
-.sass-cache/
-.jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
-**/Gemfile.lock
+.sass-cache
+.jekyll-cache
 
 # Temporary files
 tmp
+
+# Folder view configuration files
 .DS_Store
 Desktop.ini
+
+# Thumbnail cache files
 ._*
 Thumbs.db
+
+# Files that might appear on external disks
 .Spotlight-V100
 .Trashes
-.idea

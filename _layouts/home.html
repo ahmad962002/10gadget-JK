@@ -9,6 +9,7 @@ body_classes: page-home
       <div class="col-12">
         {% include framework/blocks/sections/title.html
         title=page.title
+        override_title=page.override_title
         description=page.description
         image=page.image
         show_social=true
@@ -44,10 +45,12 @@ body_classes: page-home
             description=card.description
             thumbnail=card.thumbnail
             image=card.image
+            image_alt=card.image_alt
             authors=card.authors
             categories=card.categories
             date=card.date
             url=card.url 
+            path=card.path
             weight=card.weight
           %}
         </div>

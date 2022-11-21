@@ -21,35 +21,33 @@ body_classes: page-post page-post-1
           <div class="post-title">
             <h1>{{ page.title }}</h1>
           </div>
-          {% if page.description %}
-            <div class="post-description">
-              <p>{{ page.description }}</p>
-            </div>
-          {% endif %}
-
-          {% if page.authors %}
-            <div class="post-authors">
-              {% for author in page.authors %}
-              {% assign author_id = author | replace: " ", "_" | downcase %}
-              {% assign author_object = site.data.authors[author_id] %}
-              {% include framework/blocks/components/author.html 
-                name=author_object.name
-                job=author_object.job
-                image=author_object.image
-              %}
-              {% endfor %}
-            </div>
-          {% endif %}
-
       </div>
     </div>
           
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="text-align: center">
       <div class="col-12 col-lg-8">
-        {% if page.image %}
+        {% assign post_path = page.path | prepend: '/' | prepend: site.source %}
+        {% capture cover_image_exists %}{% cover_exists {{ post_path }},{{ page.image }} %}{% endcapture %}
+        {% capture alt_cover_image_exists %}{% cover_exists {{ post_path }},{{ page.image_alt }} %}{% endcapture %}
+
+        {% if page.youtube != null %}
+          <iframe
+            width="710"
+            height="399"
+            src="{{ page.youtube }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen 
+            loading="lazy"></iframe>
+        {% elsif page.image and cover_image_exists == "true" %}
           <div class="post-image">
             <img src="{{ page.image }}" alt="{{ page.title }}" />
+          </div>    
+        {% elsif page.image_alt and alt_cover_image_exists == "true" %}
+          <div class="post-image">
+            <img src="{{ page.image_alt }}" alt="{{ page.title }}" />
           </div>
+
         {% endif %}
       </div>
     </div>

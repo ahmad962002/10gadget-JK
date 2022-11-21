@@ -7,17 +7,10 @@
 
     {% include framework/global/seo/meta.html %}
 
-    <link rel="icon" href="{{ '/assets/images/favicon/favicon.png' | relative_url }}">
-    <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+    <link rel="icon" href="{{ site.url }}/assets/images/favicon/favicon.png">
+    <link href="{{ site.url }}/assets/css/main.css" rel="stylesheet">
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="{{ site.fonts.google_fonts }}" rel="stylesheet">
-
-    {% if site.darkmode.enable_dark_mode != false %}
-      <script>
-          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
-      </script>
-    {% endif %}
-
   </head>
 <body class="page {% if page.body_classes %}{{ page.body_classes }}{% elsif layout.body_classes %}{{ layout.body_classes }}{% endif %}{% if site.header.fixed %} has-fixed-header{% else %} has-static-header{% endif %}">
 
@@ -30,12 +23,11 @@
 
 {% include framework/global/footer/bottom.html %}
 
-<script type="text/javascript" src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/scripts.js"></script>
 {% if site.header.fixed %}
-  <script type="text/javascript" src="{{ '/assets/js/header.js' | relative_url }}"></script>
+  <script type="text/javascript" src="{{ site.url }}/assets/js/header.js"></script>
 {% endif %}
-<script type="text/javascript" src="{{ '/assets/js/hamburger.js' | relative_url }}"></script>
-<script type="text/javascript" src="{{ '/assets/js/darkModeSwitch.js' | relative_url }}"></script>
+<script type="text/javascript" src="{{ site.url }}/assets/js/hamburger.js"></script>
 
 {% include framework/global/seo/google-analytics.html %}
 

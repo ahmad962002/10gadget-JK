@@ -1,4 +1,5 @@
 {% assign title = include.title %}
+{% assign override_title = include.override_title %}
 {% assign description = include.description %}
 {% assign image = include.image %}
 {% assign date = include.date %}
@@ -38,6 +39,12 @@
         </div>
       {% endif %}
       
+      {% if override_title %}
+        <div class="title-heading">
+          <h1>{{ override_title }}</h1>
+        </div>
+      {% endif %}
+      
       {% if description %}
         <div class="title-description">
           <p>{{ description }}</p>
@@ -55,7 +62,7 @@
     {% if image and image != "" %}
       <div class="col-12 col-md-6 mt-3 mt-md-0">
         <div class="title-image">
-          <img {% if title %} alt="{{ title }}" {% endif %} src="{{ image | relative_url }}"/>
+          <img {% if title %} alt="{{ title }}" {% endif %} src="{{ site.url }}{{ image }}"/>
         </div>
       </div>
     {% endif %}

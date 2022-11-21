@@ -4,6 +4,7 @@
 {% assign icon = include.icon %}
 {% assign fa_icon = include.fa_icon %}
 {% assign url = include.url %}
+{% assign path = include.path %}
 {% assign date = include.date %}
 {% assign authors = include.authors %}
 {% assign categories = include.categories %}
@@ -11,14 +12,22 @@
 {% assign show_read_more = include.show_read_more %}
 {% assign client = include.client %}
 {% assign thumbnail_size = include.thumbnail_size %}
+{% assign image = include.image %}
+{% assign image_alt = include.image_alt %}
+{% assign post_path = include.path | prepend: '/' | prepend: site.source %}
+{% capture cover_image_exists %}{% cover_exists {{ post_path }},{{ include.image }} %}{% endcapture %}
+{% capture alt_cover_image_exists %}{% cover_exists {{ post_path }},{{ include.image_alt }} %}{% endcapture %}
 
 <div class="card card-post card-{{ style }} {% if thumbnail %}card-has-thumbnail{% endif %} {% if icon or fa_icon %}card-has-icon{% endif %}">
-
-  {% if thumbnail %}
-    <div class="card-thumbnail {% if thumbnail_size %}card-thumbnail-{{ thumbnail_size }}{% endif %}">
-      <a href="{{ url | relative_url }}"><img alt="{{ title }}" src="{{ thumbnail | relative_url }}"/></a>
-    </div>
-  {% endif %}
+    {% if image and cover_image_exists == "true" %}
+       <div class="card-thumbnail {% if thumbnail_size %}card-thumbnail-{{ thumbnail_size }}{% endif %}">
+          <a href="{{ site.url }}{{ url }}"><img alt="{{ title }}" src="{{ site.url }}{{ url }}{{ image }}"/></a>
+       </div>
+    {% elsif image_alt and alt_cover_image_exists == "true" %}
+       <div class="card-thumbnail {% if thumbnail_size %}card-thumbnail-{{ thumbnail_size }}{% endif %}">
+          <a href="{{ site.url }}{{ url }}"><img alt="{{ title }}" src="{{ site.url }}{{ url }}{{ image_alt }}"/></a>
+       </div>
+    {% endif %}
 
   <div class="card-content">
     {% if authors or date %}
@@ -45,7 +54,7 @@
 
     <div class="card-title">
       <h3>
-        <a href="{{ url | relative_url }}">{{ title }}</a>
+        <a href="{{ site.url }}{{ url }}">{{ title }}</a>
       </h3>
     </div>
 
@@ -73,7 +82,7 @@
 
     {% if url and show_read_more %}
       <div class="card-readmore">
-        <a href="{{ url | relative_url }}">Read More<i class="fas fa-long-arrow-alt-right"></i>
+        <a href="{{ site.url }}{{ url }}">Read More<i class="fas fa-long-arrow-alt-right"></i>
         </a>
       </div>
     {% endif %}
