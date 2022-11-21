@@ -1,8 +1,8 @@
 # -------------------
 # Jekyll Config
 # --------------------
-baseurl: "/"
-url: "https://10gadget.com"
+baseurl: "https://10gadget.com/"
+url: "https://10gadget.com/"
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -112,13 +112,13 @@ logo:
   logo_image_desktop_width: "115px"
   logo_image_mobile_height: "27px"
   logo_image_mobile_width: "20px"
-  show_logo_image_on_mobile: false
-  show_logo_image_on_desktop: false
+  show_logo_image_on_mobile: true
+  show_logo_image_on_desktop: true
   show_logo_text_on_mobile: false
-  show_logo_text_on_desktop: false
+  show_logo_text_on_desktop: true
 
 menu: 
-  show_dropdown_items_in_mobile_menu: false
+  show_dropdown_items_in_mobile_menu: true
   show_social_media_in_mobile_menu: true
 
 header: 
@@ -130,7 +130,7 @@ footer:
   footer_description: "At 10 GADGET, we review the latest and greatest in tech products so you don’t have to."
   enable_social_media_icons: false
   enable_menu_footer_primary: false
-  enable_menu_footer_secondary: false
+  enable_menu_footer_secondary: true
   enable_menu_footer_tertiary: false
   footer_primary_menu_title: "Sections"
   footer_secondary_menu_title: "Pages"
