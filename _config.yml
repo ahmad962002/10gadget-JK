@@ -13,7 +13,7 @@ plugins:
   - jekyll-paginate
 
 permalink: /:categories/:title/
-paginate: 9
+paginate: 28
 paginate_path: "/blog/page:num"
 future: false
 
